@@ -1,0 +1,167 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% a0poster Portrait Poster
+% LaTeX Template
+% Version 1.0 (22/06/13)
+%
+% The a0poster class was created by:
+% Gerlinde Kettl and Matthias Weiser (tex@kettl.de)
+% 
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a0,portrait]{a0poster}
+
+\usepackage{multicol} % This is so we can have multiple columns of text side-by-side
+\columnsep=100pt % This is the amount of white space between the columns in the poster
+\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+
+\usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
+
+\usepackage{times} % Use the times font
+%\usepackage{palatino} % Uncomment to use the Palatino font
+
+\usepackage{graphicx} % Required for including images
+\graphicspath{{figures/}} % Location of the graphics files
+\usepackage{booktabs} % Top and bottom rules for table
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
+\usepackage{wrapfig} % Allows wrapping text around tables and figures
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	POSTER HEADER 
+%----------------------------------------------------------------------------------------
+
+% The header is divided into two boxes:
+% The first is 75% wide and houses the title, subtitle, names, university/organization and contact information
+% The second is 25% wide and houses a logo for your university/organization or a photo of you
+% The widths of these boxes can be easily edited to accommodate your content as you see fit
+
+\begin{minipage}[b]{0.75\linewidth}
+\veryHuge \color{NavyBlue} \textbf{Régression linéaire} \color{Black}\\ % Title
+\Huge\textit{fiche d'aide}\\[2cm] % Subtitle
+\huge Arts et Metiers\\[0.4cm] % University/organization
+\\
+\end{minipage}
+%
+\begin{minipage}[b]{0.25\linewidth}
+\includegraphics[width=20cm]{logo.png}\\
+\end{minipage}
+
+\vspace{1cm} % A bit of extra whitespace between the header and poster content
+
+%----------------------------------------------------------------------------------------
+
+% \begin{multicols}{1} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\color{SaddleBrown} % SaddleBrown color for the introduction
+
+\section*{A quoi sert la régression linéaire ?}
+
+La régression linéaire est une méthode statistique qui vise à prédire la valeur d’une variable expliquée en fonction de variables explicatives. Les avantages de la régression linéaire sont nombreux. Lorsque l’algorithme est entrainé, la prédiction est très rapide. Cependant, la complexité de l’algorithme augmente fortement avec le nombre de variables. De plus, contrairement à une régression polynomiale, le jeu de données doit suivre une relation linéaire pour obtenir une prédiction correcte.
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVES
+%----------------------------------------------------------------------------------------
+
+\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
+
+\section*{Comment fonctionne la régression linéaire ?}
+
+Pour effectuer une régression linéaire on peut chercher à minimiser l'erreur quadratique moyenne du jeu de test. l'erreur quadratique moyenne est définie par la formule suivante :
+$$EQM=\sum_{i=0}^{n}(\frac{ y_i-m}{\sigma_i})^2$$
+On en deduit les coefficients de la droite de régression linéaire et on obtient une droite de la forme : $y=\alpha x + \beta$
+
+%----------------------------------------------------------------------------------------
+%	MATERIALS AND METHODS
+%----------------------------------------------------------------------------------------
+
+\section*{Avantages et Inconvenients}
+
+Un modele de régression lineaire presente selon les cas des avantages et des inconvenients.
+%------------------------------------------------
+
+\subsection*{Avantages}
+
+\begin{enumerate}
+    \item Simplicité: La régression linéaire est un modèle simple et facile à comprendre. Son interprétation est souvent intuitive, ce qui le rend accessible même pour ceux qui ne sont pas experts en statistiques ou en machine learning.
+    \item interprétabilité: Les coefficients de la régression linéaire représentent la force et la direction de la relation entre les variables, ce qui facilite l'interprétation des résultats.
+    \item Efficacité: Lorsque la relation entre les variables est linéaire, la régression linéaire peut fournir des résultats précis et robustes.
+\end{enumerate}
+
+\subsection*{Inconvenients}
+
+\begin{enumerate}
+    \item Sensibilité: La régression linéaire peut être sensible aux valeurs aberrantes, ce qui signifie que des points de données extrêmes peuvent influencer considérablement les résultats.
+    \item Linéarité: Comme son nom l'indique, la régression linéaire suppose une relation linéaire entre les variables. Si cette hypothèse n'est pas respectée, les résultats peuvent être biaisés.
+    \item Limitation à des relations simples:  La régression linéaire ne peut modéliser que des relations linéaires, ce qui la rend limitée pour des situations où les relations entre les variables sont non linéaires ou complexes.
+    \item Multicollinéarité: Lorsque les variables indépendantes sont fortement corrélées entre elles, cela peut entraîner des problèmes de multicollinéarité, affectant la stabilité des coefficients estimés.
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+%	RESULTS 
+%----------------------------------------------------------------------------------------
+
+\section*{Exemple}
+
+
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.8\linewidth]{placeholder}
+\captionof{figure}{\color{Green} Figure caption}
+\end{center}\vspace{1cm}
+
+In hac habitasse platea dictumst. Etiam placerat, risus ac.
+
+Adipiscing lectus in magna blandit:
+
+
+Vivamus sed nibh ac metus tristique tristique a vitae ante. Sed lobortis mi ut arcu fringilla et adipiscing ligula rutrum. Aenean turpis velit, placerat eget tincidunt nec, ornare in nisl. In placerat.
+
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.8\linewidth]{placeholder}
+\captionof{figure}{\color{Green} Figure caption}
+\end{center}\vspace{1cm}
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSIONS
+%----------------------------------------------------------------------------------------
+
+\color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
+
+
+\nocite{*} % Print all references regardless of whether they were cited in the poster or not
+\bibliographystyle{plain} % Plain referencing style
+\bibliography{sample} % Use the example bibliography file sample.bib
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\section*{Acknowledgements}
+
+Etiam fermentum, arcu ut gravida fringilla, dolor arcu laoreet justo, ut imperdiet urna arcu a arcu. Donec nec ante a dui tempus consectetur. Cras nisi turpis, dapibus sit amet mattis sed, laoreet.
+
+%----------------------------------------------------------------------------------------
+
+%\end{multicols}
+\end{document}
