@@ -49,7 +49,7 @@
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 
 \begin{minipage}[b]{0.75\linewidth}
-\veryHuge \color{NavyBlue} \textbf{Régression linéaire} \color{Black}\\ % Title
+\veryHuge \color{NavyBlue} \textbf{Classification naive Bayésienne} \color{Black}\\ % Title
 \Huge\textit{fiche d'aide}\\[2cm] % Subtitle
 \huge Arts et Metiers\\[0.4cm] % University/organization
 \\
@@ -77,9 +77,9 @@
 
 \color{SaddleBrown} % SaddleBrown color for the introduction
 
-\section*{A quoi sert la régression linéaire ?}
+\section*{A quoi sert l'algorithme ?}
 
-La régression linéaire est une méthode statistique qui vise à prédire la valeur d’une variable expliquée en fonction de variables explicatives. Les avantages de la régression linéaire sont nombreux. Lorsque l’algorithme est entrainé, la prédiction est très rapide. Cependant, la complexité de l’algorithme augmente fortement avec le nombre de variables. De plus, contrairement à une régression polynomiale, le jeu de données doit suivre une relation linéaire pour obtenir une prédiction correcte.
+La classification naïve bayésienne est utilisée dans divers domaines pour la classification et la prédiction. Elle est particulièrement efficace pour la classification de textes (comme le filtrage des spams), la reconnaissance de patterns dans les données, et dans des applications de machine learning où la simplicité et la rapidité sont cruciales.
 
 %----------------------------------------------------------------------------------------
 %	OBJECTIVES
@@ -87,11 +87,9 @@ La régression linéaire est une méthode statistique qui vise à prédire la va
 
 \color{DarkSlateGray} % DarkSlateGray color for the rest of the content
 
-\section*{Comment fonctionne la régression linéaire ?}
+\section*{Comment fonctionne la classification naive Bayésienne ?}
 
-Pour effectuer une régression linéaire on peut chercher à minimiser l'erreur quadratique moyenne du jeu de test. l'erreur quadratique moyenne est définie par la formule suivante :
-$$EQM=\sum_{i=0}^{n}(\frac{ y_i-m}{\sigma_i})^2$$
-On en deduit les coefficients de la droite de régression linéaire et on obtient une droite de la forme : $y=\alpha x + \beta$
+La méthode repose sur le théorème de Bayes et suppose que les caractéristiques d'une donnée sont indépendantes entre elles. Pour classer une donnée, le modèle calcule la probabilité de chaque classe possible et choisit la classe ayant la probabilité la plus élevée. Cela se fait en analysant les caractéristiques de la donnée et en se basant sur des données d'entraînement préalablement fournies
 
 %----------------------------------------------------------------------------------------
 %	MATERIALS AND METHODS
@@ -99,24 +97,21 @@ On en deduit les coefficients de la droite de régression linéaire et on obtien
 
 \section*{Avantages et Inconvenients}
 
-Un modele de régression lineaire presente selon les cas des avantages et des inconvenients.
 %------------------------------------------------
 
 \subsection*{Avantages}
 
 \begin{enumerate}
-    \item Simplicité: La régression linéaire est un modèle simple et facile à comprendre. Son interprétation est souvent intuitive, ce qui le rend accessible même pour ceux qui ne sont pas experts en statistiques ou en machine learning.
-    \item interprétabilité: Les coefficients de la régression linéaire représentent la force et la direction de la relation entre les variables, ce qui facilite l'interprétation des résultats.
-    \item Efficacité: Lorsque la relation entre les variables est linéaire, la régression linéaire peut fournir des résultats précis et robustes.
+    \item Simplicité et Rapidité : Facile à implémenter et rapide dans les calculs.
+    \item Efficace avec de Grandes Bases de Données : Performe bien même avec de grandes quantités de données.
+    \item Bon avec les Données Indépendantes : Excellente performance lorsque les caractéristiques des données sont indépendantes
 \end{enumerate}
 
 \subsection*{Inconvenients}
 
 \begin{enumerate}
-    \item Sensibilité: La régression linéaire peut être sensible aux valeurs aberrantes, ce qui signifie que des points de données extrêmes peuvent influencer considérablement les résultats.
-    \item Linéarité: Comme son nom l'indique, la régression linéaire suppose une relation linéaire entre les variables. Si cette hypothèse n'est pas respectée, les résultats peuvent être biaisés.
-    \item Limitation à des relations simples:  La régression linéaire ne peut modéliser que des relations linéaires, ce qui la rend limitée pour des situations où les relations entre les variables sont non linéaires ou complexes.
-    \item Multicollinéarité: Lorsque les variables indépendantes sont fortement corrélées entre elles, cela peut entraîner des problèmes de multicollinéarité, affectant la stabilité des coefficients estimés.
+    \item Hypothèse d'Indépendance : Peut être irréaliste dans certains cas, ce qui affecte la performance.
+    \item Sensibilité à la Donnée d'Entraînement : La qualité de la classification dépend fortement de la qualité des données d'entraînement.
 \end{enumerate}
 
 %----------------------------------------------------------------------------------------
@@ -125,14 +120,11 @@ Un modele de régression lineaire presente selon les cas des avantages et des in
 
 \section*{Exemple}
 
+Considérons le filtrage des e-mails en tant que "spam" ou "non-spam". La classification naïve bayésienne analyse les mots dans les e-mails et, en se basant sur la fréquence des mots dans les catégories de spam et de non-spam apprises lors de l'entraînement, détermine la probabilité qu'un e-mail donné soit du spam.
 
-\begin{center}\vspace{1cm}
-\includegraphics[width=0.3\linewidth]{sphx_glr_plot_ols_001.png}
-\captionof{figure}{\color{Green} Exemple de régression linéaire avec sklearn}
-\end{center}\vspace{1cm}
-
-On peut mettre en place le pseudo-code suivant:
-
+%\begin{center}\vspace{1cm}
+%    \includegraphics[width=0.4\linewidth]{}
+%\end{center}
 
 
 %----------------------------------------------------------------------------------------
@@ -140,11 +132,10 @@ On peut mettre en place le pseudo-code suivant:
 %----------------------------------------------------------------------------------------
 
 \color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
+\section{Pour aller plus loin}
+\textbf{Lissage de Laplace} : Pour éviter le problème des probabilités nulles (lorsqu'un attribut n'apparaît pas dans le jeu de données d'entraînement), le lissage de Laplace est souvent utilisé. Cette technique ajuste les probabilités pour prendre en compte les caractéristiques non observées.\newline
+\textbf{Modèles de Probabilité} : Selon le type de données, différents modèles de probabilité peuvent être appliqués. Par exemple, le modèle de Bernoulli traite les attributs comme des variables binaires, tandis que le modèle multinomial est adapté aux caractéristiques discrètes, comme les fréquences de mots dans le traitement du texte.
 
-
-\nocite{*} % Print all references regardless of whether they were cited in the poster or not
-\bibliographystyle{plain} % Plain referencing style
-\bibliography{sample} % Use the example bibliography file sample.bib
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
@@ -154,7 +145,7 @@ On peut mettre en place le pseudo-code suivant:
 
 \begin{enumerate}
     \item \href{https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html}{Scikit-learn}.
-    \item \href{https://en.wikipedia.org/wiki/Linear_regression.}{Wikipedia} (la page française n'est pas très bonne) 
+    \item \href{https://en.wikipedia.org/wiki/Linear_regression.}{Wikipedia}
 \end{enumerate}
 
 %----------------------------------------------------------------------------------------

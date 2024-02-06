@@ -49,7 +49,7 @@
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 
 \begin{minipage}[b]{0.75\linewidth}
-\veryHuge \color{NavyBlue} \textbf{Régression linéaire} \color{Black}\\ % Title
+\veryHuge \color{NavyBlue} \textbf{K plus proches voisins (KNN)} \color{Black}\\ % Title
 \Huge\textit{fiche d'aide}\\[2cm] % Subtitle
 \huge Arts et Metiers\\[0.4cm] % University/organization
 \\
@@ -77,21 +77,23 @@
 
 \color{SaddleBrown} % SaddleBrown color for the introduction
 
-\section*{A quoi sert la régression linéaire ?}
+\section*{A quoi sert l'algorithme ?}
 
-La régression linéaire est une méthode statistique qui vise à prédire la valeur d’une variable expliquée en fonction de variables explicatives. Les avantages de la régression linéaire sont nombreux. Lorsque l’algorithme est entrainé, la prédiction est très rapide. Cependant, la complexité de l’algorithme augmente fortement avec le nombre de variables. De plus, contrairement à une régression polynomiale, le jeu de données doit suivre une relation linéaire pour obtenir une prédiction correcte.
-
+L'algorithme des k plus proches voisins (KNN) est utilisé à la fois pour la classification et la régression dans l'apprentissage supervisé. Ses applications incluent la classification d'images, la recommandation, la détection d'anomalies, la prédiction de valeurs, le traitement du signal, la cartographie, l'apprentissage semi-supervisé et la compression de données. KNN est particulièrement utile lorsque les données sont réparties de manière locale et que des informations provenant de voisins proches peuvent être utilisées pour prendre des décisions.
 %----------------------------------------------------------------------------------------
 %	OBJECTIVES
 %----------------------------------------------------------------------------------------
 
 \color{DarkSlateGray} % DarkSlateGray color for the rest of the content
 
-\section*{Comment fonctionne la régression linéaire ?}
+\section*{Comment fonctionne le KNN ?}
 
-Pour effectuer une régression linéaire on peut chercher à minimiser l'erreur quadratique moyenne du jeu de test. l'erreur quadratique moyenne est définie par la formule suivante :
-$$EQM=\sum_{i=0}^{n}(\frac{ y_i-m}{\sigma_i})^2$$
-On en deduit les coefficients de la droite de régression linéaire et on obtient une droite de la forme : $y=\alpha x + \beta$
+L'algorithme des k plus proches voisins fonctionne en mesurant la proximité spatiale d'un nouvel exemple à k voisins les plus proches dans un ensemble de données existant. Il attribue au nouvel exemple une classe majoritaire parmi ses voisins pour la classification, ou prédit une valeur moyenne pour la régression. KNN est simple à comprendre, mais le choix de la distance et du nombre de voisins (k) peut influencer les résultats. Cet algorithme est utilisé pour des tâches de classification, de régression, de recommandation et de détection d'anomalies.
+
+\begin{center}\vspace{1cm}
+    \includegraphics[width=0.3\linewidth]{knn.png}
+    \captionof{figure}{classification d'un element par knn}
+\end{center}
 
 %----------------------------------------------------------------------------------------
 %	MATERIALS AND METHODS
@@ -99,24 +101,24 @@ On en deduit les coefficients de la droite de régression linéaire et on obtien
 
 \section*{Avantages et Inconvenients}
 
-Un modele de régression lineaire presente selon les cas des avantages et des inconvenients.
 %------------------------------------------------
 
 \subsection*{Avantages}
 
 \begin{enumerate}
-    \item Simplicité: La régression linéaire est un modèle simple et facile à comprendre. Son interprétation est souvent intuitive, ce qui le rend accessible même pour ceux qui ne sont pas experts en statistiques ou en machine learning.
-    \item interprétabilité: Les coefficients de la régression linéaire représentent la force et la direction de la relation entre les variables, ce qui facilite l'interprétation des résultats.
-    \item Efficacité: Lorsque la relation entre les variables est linéaire, la régression linéaire peut fournir des résultats précis et robustes.
+    \item Facile à comprendre et à implémenter
+    \item Une fois entraîné, il ne nécessite pas de réentrainement lors de la modification de données
+    \item Classification et régression
 \end{enumerate}
 
 \subsection*{Inconvenients}
 
 \begin{enumerate}
-    \item Sensibilité: La régression linéaire peut être sensible aux valeurs aberrantes, ce qui signifie que des points de données extrêmes peuvent influencer considérablement les résultats.
-    \item Linéarité: Comme son nom l'indique, la régression linéaire suppose une relation linéaire entre les variables. Si cette hypothèse n'est pas respectée, les résultats peuvent être biaisés.
-    \item Limitation à des relations simples:  La régression linéaire ne peut modéliser que des relations linéaires, ce qui la rend limitée pour des situations où les relations entre les variables sont non linéaires ou complexes.
-    \item Multicollinéarité: Lorsque les variables indépendantes sont fortement corrélées entre elles, cela peut entraîner des problèmes de multicollinéarité, affectant la stabilité des coefficients estimés.
+    \item Sensible aux valeurs aberrantes
+    \item Demande beaucoup de ressources pour calculer la distance entre les points
+    \item Besoin de beaucoup de stockage pour les données
+    \item Choix de k qui influe sur les résultats
+    \item Ne fonctionne pas bien avec des données de grande dimension
 \end{enumerate}
 
 %----------------------------------------------------------------------------------------
@@ -125,15 +127,13 @@ Un modele de régression lineaire presente selon les cas des avantages et des in
 
 \section*{Exemple}
 
+On cherche à savoir si un fruit est une pomme ou une orange en fonction de son poids et de son diamètre. On a les données suivantes :
 
 \begin{center}\vspace{1cm}
-\includegraphics[width=0.3\linewidth]{sphx_glr_plot_ols_001.png}
-\captionof{figure}{\color{Green} Exemple de régression linéaire avec sklearn}
-\end{center}\vspace{1cm}
+    \includegraphics[width=0.4\linewidth]{knn2.png}
+\end{center}
 
-On peut mettre en place le pseudo-code suivant:
-
-
+ici, l'algorithme renvoie que le fruit est une pomme.
 
 %----------------------------------------------------------------------------------------
 %	CONCLUSIONS
@@ -141,10 +141,6 @@ On peut mettre en place le pseudo-code suivant:
 
 \color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
 
-
-\nocite{*} % Print all references regardless of whether they were cited in the poster or not
-\bibliographystyle{plain} % Plain referencing style
-\bibliography{sample} % Use the example bibliography file sample.bib
 
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
@@ -154,7 +150,7 @@ On peut mettre en place le pseudo-code suivant:
 
 \begin{enumerate}
     \item \href{https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html}{Scikit-learn}.
-    \item \href{https://en.wikipedia.org/wiki/Linear_regression.}{Wikipedia} (la page française n'est pas très bonne) 
+    \item \href{https://en.wikipedia.org/wiki/Linear_regression.}{Wikipedia}
 \end{enumerate}
 
 %----------------------------------------------------------------------------------------
