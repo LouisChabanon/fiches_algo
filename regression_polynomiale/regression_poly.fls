@@ -1,0 +1,6 @@
+PWD /Users/louischabanon/dev/fiches_algo/regression_polynomiale
+INPUT /Users/louischabanon/Library/TinyTeX/texmf.cnf
+INPUT /Users/louischabanon/Library/TinyTeX/texmf-dist/web2c/texmf.cnf
+INPUT /Users/louischabanon/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/louischabanon/dev/fiches_algo/regression_polynomiale/regression_poly.tex
+OUTPUT regression_poly.log

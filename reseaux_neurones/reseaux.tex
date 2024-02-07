@@ -1,0 +1,147 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% a0poster Portrait Poster
+% LaTeX Template
+% Version 1.0 (22/06/13)
+%
+% The a0poster class was created by:
+% Gerlinde Kettl and Matthias Weiser (tex@kettl.de)
+% 
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a0,portrait]{a0poster}
+
+\usepackage{multicol} % This is so we can have multiple columns of text side-by-side
+\columnsep=100pt % This is the amount of white space between the columns in the poster
+\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+
+\usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
+
+\usepackage{times} % Use the times font
+%\usepackage{palatino} % Uncomment to use the Palatino font
+
+\usepackage{graphicx} % Required for including images
+\graphicspath{{figures/}} % Location of the graphics files
+\usepackage{booktabs} % Top and bottom rules for table
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
+\usepackage{wrapfig} % Allows wrapping text around tables and figures
+\usepackage{hyperref}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	POSTER HEADER 
+%----------------------------------------------------------------------------------------
+
+% The header is divided into two boxes:
+% The first is 75% wide and houses the title, subtitle, names, university/organization and contact information
+% The second is 25% wide and houses a logo for your university/organization or a photo of you
+% The widths of these boxes can be easily edited to accommodate your content as you see fit
+
+\begin{minipage}[b]{0.75\linewidth}
+  \veryHuge \color{NavyBlue} \textbf{Réseau de neurones} \color{Black}\\ % Title
+\Huge\textit{fiche d'aide}\\[2cm] % Subtitle
+\huge Arts et Metiers\\[0.4cm] % University/organization
+\\
+\end{minipage}
+%
+\begin{minipage}[b]{0.25\linewidth}
+\includegraphics[width=20cm]{logo.png}\\
+\end{minipage}
+
+\vspace{1cm} % A bit of extra whitespace between the header and poster content
+
+%----------------------------------------------------------------------------------------
+
+% \begin{multicols}{1} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\color{SaddleBrown} % SaddleBrown color for the introduction
+
+\section*{A quoi sert un réseau de neurones ? }
+
+Les réseaux de neurones sont des modèles informatiques inspirés du cerveau humain, utilisés principalement en intelligence artificielle. Ils peuvent effectuer diverses tâches telles que la reconnaissance d'images, la traduction automatique, la prédiction de séquences temporelles et bien d'autres. Les réseaux de neurones convolutifs sont adaptés à la vision par ordinateur, tandis que les réseaux de neurones récurrents sont utilisés pour le traitement de séquences. Ils sont largement employés dans le traitement du langage naturel, la modélisation et la simulation, l'apprentissage par renforcement, et la reconnaissance de motifs. Ces réseaux permettent d'automatiser des tâches complexes en apprenant à partir de données.
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVES
+%----------------------------------------------------------------------------------------
+
+\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
+
+\section*{Comment fonctionne un réseau de neurones ?}
+
+Les réseaux de neurones sont constitués de neurones artificiels organisés en couches (entrée, cachées, sortie), avec des connexions pondérées entre eux. Chaque neurone applique des poids aux entrées, les somme, et passe le résultat à travers une fonction d'activation. L'information se propage de l'entrée à la sortie, avec des ajustements de poids réalisés via la rétropropagation du gradient pour minimiser une fonction de perte. Ce processus d'entraînement permet au réseau d'apprendre des modèles complexes à partir de données. En phase d'inférence, le réseau utilise ces apprentissages pour faire des prédictions sur de nouvelles données.
+
+%----------------------------------------------------------------------------------------
+%	MATERIALS AND METHODS
+%----------------------------------------------------------------------------------------
+
+\section*{Avantages et Inconvenients}
+
+Un réseau de neurones resente selon les cas des avantages et des inconvenients.
+%------------------------------------------------
+
+\subsection*{Avantages}
+
+\begin{enumerate}
+    \item Capacité d'apprentissage de tâches complexes
+    \item Performances élevées
+\end{enumerate}
+
+\subsection*{Inconvenients}
+
+\begin{enumerate}
+    \item Demande beaucoup de ressources à l'entrainement
+
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+%	RESULTS 
+%----------------------------------------------------------------------------------------
+
+\section*{Exemple}
+
+Les réseaux de neurones sont largement utilisés dans divers domaines. Ils permettent la reconnaissance d'images, le traitement du langage naturel, la reconnaissance vocale, la création d'agents intelligents dans les jeux vidéo, le diagnostic médical, l'analyse financière, la conduite autonome, la personnalisation de la publicité en ligne, la maintenance prédictive dans l'industrie, et la génération automatique de contenu artistique. Leur capacité à apprendre des modèles complexes à partir de données en fait des outils polyvalents pour résoudre une variété de problèmes.
+
+
+\color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
+
+
+\nocite{*} % Print all references regardless of whether they were cited in the poster or not
+\bibliographystyle{plain} % Plain referencing style
+\bibliography{sample} % Use the example bibliography file sample.bib
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\section*{Pour aller plus loin}
+
+\begin{enumerate}
+    \item \href{https://scikit-learn.org}{Scikit-learn}.
+    \item \href{https://fr.wikipedia.org/wiki/R\%C3\%A9seau_de_neurones_artificiels}{Wikipedia}  
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+
+%\end{multicols}
+\end{document}

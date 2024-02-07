@@ -1,0 +1,14 @@
+# Fdb version 4
+["pdflatex"] 1707221280 "/Users/louischabanon/dev/fiches_algo/regression_polynomiale/regression_poly.tex" "regression_poly.pdf" "regression_poly" 1707221281 2
+  "/Users/louischabanon/Library/TinyTeX/texmf-dist/web2c/texmf.cnf" 1697057529 41009 84b61f42d16d06bedb915f57aa2374cf ""
+  "/Users/louischabanon/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1697167156 6787450 5a3fa88de3c536488968e0a0e59883db ""
+  "/Users/louischabanon/Library/TinyTeX/texmf.cnf" 1697166911 637 edd806fb06a89761a6034e1968af9017 ""
+  "/Users/louischabanon/dev/fiches_algo/regression_polynomiale/regression_poly.tex" 1707221161 8919 ee7812bf47534ad6bac59949913f08ea ""
+  "a0poster.cls" 0 -1 0 ""
+  "regression_poly.aux" 1707221280 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "regression_poly.tex" 1707221161 8919 ee7812bf47534ad6bac59949913f08ea ""
+  (generated)
+  "regression_poly.aux"
+  "regression_poly.log"
+  "regression_poly.pdf"
+  (rewritten before read)

@@ -1,0 +1,152 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% a0poster Portrait Poster
+% LaTeX Template
+% Version 1.0 (22/06/13)
+%
+% The a0poster class was created by:
+% Gerlinde Kettl and Matthias Weiser (tex@kettl.de)
+% 
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a0,portrait]{a0poster}
+
+\usepackage{multicol} % This is so we can have multiple columns of text side-by-side
+\columnsep=100pt % This is the amount of white space between the columns in the poster
+\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+
+\usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
+
+\usepackage{times} % Use the times font
+%\usepackage{palatino} % Uncomment to use the Palatino font
+
+\usepackage{graphicx} % Required for including images
+\graphicspath{{figures/}} % Location of the graphics files
+\usepackage{booktabs} % Top and bottom rules for table
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
+\usepackage{wrapfig} % Allows wrapping text around tables and figures
+\usepackage{hyperref}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	POSTER HEADER 
+%----------------------------------------------------------------------------------------
+
+% The header is divided into two boxes:
+% The first is 75% wide and houses the title, subtitle, names, university/organization and contact information
+% The second is 25% wide and houses a logo for your university/organization or a photo of you
+% The widths of these boxes can be easily edited to accommodate your content as you see fit
+
+\begin{minipage}[b]{0.75\linewidth}
+\veryHuge \color{NavyBlue} \textbf{Régression polynomiale} \color{Black}\\ % Title
+\Huge\textit{fiche d'aide}\\[2cm] % Subtitle
+\huge Arts et Metiers\\[0.4cm] % University/organization
+\\
+\end{minipage}
+%
+\begin{minipage}[b]{0.25\linewidth}
+\includegraphics[width=20cm]{logo.png}\\
+\end{minipage}
+
+\vspace{1cm} % A bit of extra whitespace between the header and poster content
+
+%----------------------------------------------------------------------------------------
+
+% \begin{multicols}{1} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\color{SaddleBrown} % SaddleBrown color for the introduction
+
+\section*{A quoi sert la régression polynomiale ?}
+
+La régression polynomiale est une technique de modélisation statistique essentielle pour examiner et comprendre les relations non linéaires entre les variables. Elle est largement utilisée dans des domaines variés comme l'économie, la biologie, et l'ingénierie. En économie, elle aide à modéliser des tendances de croissance non uniformes; en biologie, elle est utilisée pour étudier les relations de croissance des organismes; et en ingénierie, elle sert à analyser les contraintes et résistances des matériaux. Sa capacité à s'adapter à des modèles de données complexes où les variations ne suivent pas un schéma linéaire la rend particulièrement précieuse pour les recherches et analyses qui exigent une compréhension approfondie des interactions variables.
+%----------------------------------------------------------------------------------------
+%	OBJECTIVES
+%----------------------------------------------------------------------------------------
+
+\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
+
+\section*{Comment fonctionne la régression polynomiale ?}
+
+  La régression polynomiale fonctionne en ajustant un polynôme aux données. Contrairement à la régression linéaire qui se limite à une ligne droite, la régression polynomiale utilise des équations comme $y = ax^2 + bx + c$  (pour un polynôme de degré 2) pour représenter la relation entre les variables indépendantes et dépendantes. Les coefficients a, b et c sont déterminés de manière à ce que la courbe du polynôme s'ajuste au mieux aux données observées. Le choix du degré du polynôme est crucial : un degré trop bas peut ne pas saisir toute la complexité des données, tandis qu'un degré trop élevé peut conduire à un surajustement, rendant le modèle moins précis pour les prédictions. La visualisation graphique de ces modèles est souvent utilisée pour mieux comprendre la nature de la relation entre les variables.
+
+\section*{Avantages et Inconvenients}
+
+Un modele de régression polynomiale presente selon les cas des avantages et des inconvenients.
+
+\subsection*{Avantages}
+
+\begin{enumerate}
+    \item Flexibilité : La régression polynomiale est capable de modéliser des relations beaucoup plus complexes que la régression linéaire, offrant une flexibilité adaptée à divers types de données.
+    \item Adaptabilité : Elle s'adapte bien aux variations importantes et non linéaires dans les données, ce qui la rend utile dans des contextes où les relations entre les variables ne sont pas simples ou directes.
+\end{enumerate}
+
+\subsection*{Inconvenients}
+
+\begin{enumerate}
+    \item Risque de surajustement : Un des principaux inconvénients est le risque de surajustement, surtout si le degré du polynôme est trop élevé. Cela peut rendre le modèle moins fiable pour les prédictions sur de nouvelles données.
+    \item Complexité et interprétation : La régression polynomiale est plus complexe à analyser et à interpréter que la régression linéaire, ce qui peut être un défi, notamment pour ceux qui ne sont pas familiers avec les méthodes statistiques avancées.
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+%	RESULTS 
+%----------------------------------------------------------------------------------------
+
+\section*{Exemple}
+
+
+Un exemple classique de l'utilisation de la régression polynomiale est dans l'analyse des tendances économiques. Par exemple, pour prédire la croissance du PIB d'un pays, une régression polynomiale peut être utilisée pour mieux comprendre comment divers facteurs économiques (comme les investissements, la consommation, et les politiques gouvernementales) influencent le PIB de manière non linéaire. Ce type de modèle peut capturer les nuances et les inflexions dans les données qui seraient manquées par un modèle linéaire.
+
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSIONS
+%----------------------------------------------------------------------------------------
+
+\color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
+
+
+\nocite{*} % Print all references regardless of whether they were cited in the poster or not
+\bibliographystyle{plain} % Plain referencing style
+\bibliography{sample} % Use the example bibliography file sample.bib
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\section*{Pour aller plus loin}
+
+Choix du degré du Polynôme : Une étape cruciale dans l'utilisation de la régression polynomiale est de déterminer le degré approprié du polynôme. Des techniques comme la validation croisée peuvent aider à trouver un équilibre entre la précision du modèle et le risque de surajustement.
+
+
+Relation avec d'autres Formes de Régression : La régression polynomiale est étroitement liée à d'autres formes de régression, comme la régression spline, qui offre une approche alternative pour modéliser des relations non linéaires en utilisant des polynômes sur des segments de données.
+
+
+\begin{enumerate}
+    \item \href{https://scikit-learn.org/}{Scikit-learn}.
+    \item \href{https://en.wikipedia.org/wiki/Polynomial_regression.}{Wikipedia} 
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+
+%\end{multicols}
+\end{document}
